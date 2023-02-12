@@ -9,5 +9,8 @@ def insert(item :DataClassCard):
 def read():
     return replist
 
-def convert_to_dataframe():
+def class_to_frame():
     return pd.DataFrame(replist)
+
+def frame_to_class(df :pd.DataFrame):
+    return df.apply(lambda row: DataClassCard(**row), axis=1)
